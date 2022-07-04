@@ -28,3 +28,15 @@
 - **First-class values**, just like strings or integers. 
 - A channel can only transfer values of the **same type**.
 
+## References
+
+```
+Effective Go: https://go.dev/doc/effective_go#channels
+
+Go Concurrency Blog Post: https://go.dev/blog/waza-talk
+
+GeeksforGeeks: https://www.geeksforgeeks.org/channel-in-golang/
+
+Go Channel Article: https://go101.org/article/channel.html
+```
+
