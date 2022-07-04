@@ -28,7 +28,7 @@
 - **First-class values**, just like strings or integers. 
 - A channel can only transfer values of the **same type**.
 
-### Declaration & Initialization (宣告 ＆ 初始化)
+### Declaration & Initialization (宣告與初始化)
 
 ```
 // Declaring and initializing.
@@ -59,7 +59,7 @@ value = <-c
   - Buffer size is set to zero.
   - Combines communication with synchronization.
 
-### Concurrency v.s. Parallelism
+### Concurrency v.s. Parallelism (並發與並行)
 
 ![Concurrency v.s. Parallelism](./img/concurrency-vs-parallelism.png)
 
