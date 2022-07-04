@@ -7,7 +7,9 @@ import (
 )
 
 func main() {
-	boring("hi")
+	// boring("hi")
+	// slightlyLessBoring("hi")
+	go slightlyLessBoring("hi")
 }
 
 // Prints a message along with index infinitely,
