@@ -59,6 +59,19 @@ value = <-c
   - Buffer size is set to zero.
   - Combines communication with synchronization.
 
+### Concurrency v.s. Parallelism
+
+![Concurrency v.s. Parallelism](./img/concurrency-vs-parallelism.png)
+
+- Concurrency
+  - Composition of independently executing processes.
+  - Make use of **context switching**.
+  - Increased amount of work accomplished at a time.
+- Parallelism
+  - Simultaneous execution of (possibly related) computations.
+  - Make use of **multiple CPUs** for operating multiple processes.
+  - Improved throughput, computational speed-up.
+
 ## References
 
 - [Effective Go - The Go Programming Language](https://go.dev/doc/effective_go#channels)
