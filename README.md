@@ -22,6 +22,8 @@
 
 ### Definition
 
+![go channel](./img/go-channel.png)
+
 - Provides a **connection** between two goroutines, allowing them to communicate. 
 - **Bidirectional** as default. Goroutines can send/receive data through the same channel. 
   - Can be single-directional i.e. send-only or receive-only channel 
