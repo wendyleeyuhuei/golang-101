@@ -22,9 +22,9 @@
 
 ### Definition
 
-- Provides a connection between two goroutines, allowing them to communicate. 
-- Bidirectional as default. Goroutines can send/receive data through the same channel. 
+- Provides a **connection** between two goroutines, allowing them to communicate. 
+- **Bidirectional** as default. Goroutines can send/receive data through the same channel. 
   - Can be single-directional i.e. send-only or receive-only channel 
-- First-class values, just like strings or integers. 
-- A channel can only transfer values of the same type.
+- **First-class values**, just like strings or integers. 
+- A channel can only transfer values of the **same type**.
 
