@@ -6,7 +6,7 @@
 - It has its own call stack, which grows and shrinks as required.
 - It's not a thread (執行緒).
 
-### Demo
+### Demo Time :alarm_clock:
 
 [demo 1](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-1)
 
@@ -66,6 +66,10 @@ value = <-c
 - Receivers always block until there is data to receive.
 - For unbuffered channel, the sender blocks until the receiver has **received** the value.
 - For buffered channel, the sender blocks only until the value has been **copied** to the buffer. If the buffer is full, the sender needs to wait until some receiver has retrieved a value.
+
+### Demo Time :alarm_clock:
+
+[demo 1](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-1): Channels both communicate and synchronize.
 
 ### Concurrency v.s. Parallelism (並發與並行)
 
