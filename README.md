@@ -8,11 +8,11 @@
 
 ### Demo Time :alarm_clock:
 
-[demo 1](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-1)
+[goroutine-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-1)
 
-[demo 2](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-2)
+[goroutine-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-2)
 
-[demo 3](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-3)
+[goroutine-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-3)
 
 - What's missing?
   - The main function couldn't see the output from the other goroutine.
@@ -69,7 +69,7 @@ value = <-c
 
 ### Demo Time :alarm_clock:
 
-[demo 1](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-1): Channels both communicate and synchronize.
+[channel-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-1): Channels both communicate and synchronize.
 
 ### Concurrency v.s. Parallelism (並行與平行)
 
@@ -83,6 +83,10 @@ value = <-c
   - Simultaneous execution of (possibly related) computations.
   - Make use of **multiple CPUs** for operating multiple processes.
   - Improved throughput, computational speed-up.
+
+### Demo Time :alarm_clock:
+
+[channel-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-2): Function that returns a channel which lets us communicate with the service it provides
 
 ## References
 
