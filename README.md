@@ -91,6 +91,8 @@ value = <-c
 [channel-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-3): Use fan-in function to let whosoever is ready talk.
 ![fan-in function](./img/fan-in-function.png)
 
+[channel-4](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-4): Restoring sequence.
+
 ## References
 
 - [Effective Go - The Go Programming Language](https://go.dev/doc/effective_go#channels)
