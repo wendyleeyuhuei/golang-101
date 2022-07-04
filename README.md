@@ -61,13 +61,12 @@ value = <-c
 
 ## References
 
-```
-Effective Go: https://go.dev/doc/effective_go#channels
 
-Go Concurrency Blog Post: https://go.dev/blog/waza-talk
+- [Effective Go - The Go Programming Language](https://go.dev/doc/effective_go#channels)
+- [Concurrency is not parallelism - The Go Programming Language](https://go.dev/blog/waza-talk)
+- [Channel in Golang - GeeksforGeeks](https://www.geeksforgeeks.org/channel-in-golang/)
+- [Channels in Go](https://go101.org/article/channel.html)
+- [Difference Between Concurrency and Parallelism (with Comparison Chart)](https://techdifferences.com/difference-between-concurrency-and-parallelism.html)
+- [程序(進程)、執行緒(線程)、協程，傻傻分得清楚！](https://oldmo860617.medium.com/%E9%80%B2%E7%A8%8B-%E7%B7%9A%E7%A8%8B-%E5%8D%94%E7%A8%8B-%E5%82%BB%E5%82%BB%E5%88%86%E5%BE%97%E6%B8%85%E6%A5%9A-a09b95bd68dd)
 
-GeeksforGeeks: https://www.geeksforgeeks.org/channel-in-golang/
-
-Go Channel Article: https://go101.org/article/channel.html
-```
 
