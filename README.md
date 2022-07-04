@@ -86,7 +86,10 @@ value = <-c
 
 ### Demo Time :alarm_clock:
 
-[channel-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-2): Function that returns a channel which lets us communicate with the service it provides
+[channel-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-2): Function that returns a channel which lets us communicate with the service it provides.
+
+[channel-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-3): Use fan-in function to let whosoever is ready talk.
+![fan-in function](./img/fan-in-function.png)
 
 ## References
 
