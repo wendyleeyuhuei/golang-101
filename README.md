@@ -71,7 +71,7 @@ value = <-c
 
 [demo 1](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-1): Channels both communicate and synchronize.
 
-### Concurrency v.s. Parallelism (並發與並行)
+### Concurrency v.s. Parallelism (並行與平行)
 
 ![Concurrency v.s. Parallelism](./img/concurrency-vs-parallelism.png)
 
