@@ -59,6 +59,12 @@ value = <-c
   - Buffer size is set to zero.
   - Combines communication with synchronization.
 
+### Sender & Receiver
+
+- Receivers always block until there is data to receive.
+- For unbuffered channel, the sender blocks until the receiver has **received** the value.
+- For buffered channel, the sender blocks only until the value has been **copied** to the buffer. If the buffer is full, the sender needs to wait until some receiver has retrieved a value.
+
 ### Concurrency v.s. Parallelism (並發與並行)
 
 ![Concurrency v.s. Parallelism](./img/concurrency-vs-parallelism.png)
