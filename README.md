@@ -4,7 +4,7 @@
 
 - A goroutine is an independently executing function, launched by a `go` statement.
 - It has its own call stack, which grows and shrinks as required.
-- It's not a thread.
+- It's not a thread (執行緒).
 
 ### Demo
 
@@ -27,6 +27,37 @@
   - Can be single-directional i.e. send-only or receive-only channel 
 - **First-class values**, just like strings or integers. 
 - A channel can only transfer values of the **same type**.
+
+### Declaration & Initialization (宣告 ＆ 初始化)
+
+```
+// Declaring and initializing.
+var c chan int
+c = make(chan int)
+// or
+c := make(chan int)
+```
+
+```
+// Sending on a channel.
+c <- 1
+```
+
+```
+// Receiving from a channel.
+// The "arrow" indicates the direction of data flow.
+value = <-c
+```
+
+### Categories
+
+- Buffered Channel (緩衝信道)
+  - Has a buffer size.
+  - Acts as a [semaphore](https://www.keil.com/pack/doc/CMSIS/RTOS/html/group__CMSIS__RTOS__SemaphoreMgmt.html#details); manage and protect access to shared resources.
+  - Limits the throughput; the capacity of the channel buffer limits the number of simultaneous calls to process.
+- Unbuffered Channel
+  - Buffer size is set to zero.
+  - Combines communication with synchronization.
 
 ## References
 
