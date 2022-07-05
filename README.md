@@ -71,21 +71,6 @@ value = <-c
 
 [channel-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-1): Channels both communicate and synchronize.
 
-### Concurrency v.s. Parallelism (並行與平行)
-
-![Concurrency v.s. Parallelism](./img/concurrency-vs-parallelism.png)
-
-- Concurrency
-  - Composition of independently executing processes.
-  - Make use of **context switching**.
-  - Increased amount of work accomplished at a time.
-- Parallelism
-  - Simultaneous execution of (possibly related) computations.
-  - Make use of **multiple CPUs** for operating multiple processes.
-  - Improved throughput, computational speed-up.
-
-**Demo Time** :alarm_clock:
-
 [channel-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-2): Function that returns a channel which lets us communicate with the service it provides.
 
 [channel-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-3): Use fan-in function to let whosoever is ready talk.
@@ -102,6 +87,19 @@ value = <-c
 [channel-6](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-6): Timeout using `select`.
 
 [channel-7](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-7): Timeout for whole conversation using `select`.
+
+### Concurrency v.s. Parallelism (並行與平行)
+
+![Concurrency v.s. Parallelism](./img/concurrency-vs-parallelism.png)
+
+- Concurrency
+  - Composition of independently executing processes.
+  - Make use of **context switching**.
+  - Increased amount of work accomplished at a time.
+- Parallelism
+  - Simultaneous execution of (possibly related) computations.
+  - Make use of **multiple CPUs** for operating multiple processes.
+  - Improved throughput, computational speed-up.
 
 ## References
 
