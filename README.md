@@ -93,6 +93,8 @@ value = <-c
 
 [channel-4](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-4): Restoring sequence.
 
+[channel-5](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-5): Refactor fan-in function.
+
 ## References
 
 - [Effective Go - The Go Programming Language](https://go.dev/doc/effective_go#channels)
