@@ -93,7 +93,13 @@ value = <-c
 
 [channel-4](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-4): Restoring sequence.
 
+### Select Control Structure
+
+**Demo Time** :alarm_clock:
+
 [channel-5](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-5): Refactor fan-in function.
+
+[channel-6](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-6): Timeout using `select`.
 
 ## References
 
