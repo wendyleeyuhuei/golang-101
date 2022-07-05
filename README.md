@@ -101,6 +101,8 @@ value = <-c
 
 [channel-6](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-6): Timeout using `select`.
 
+[channel-7](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-7): Timeout for whole conversation using `select`.
+
 ## References
 
 - [Effective Go - The Go Programming Language](https://go.dev/doc/effective_go#channels)
