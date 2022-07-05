@@ -6,7 +6,7 @@
 - It has its own call stack, which grows and shrinks as required.
 - It's not a thread (執行緒).
 
-### Demo Time :alarm_clock:
+**Demo Time** :alarm_clock:
 
 [goroutine-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-1)
 
@@ -67,7 +67,7 @@ value = <-c
 - For unbuffered channel, the sender blocks until the receiver has **received** the value.
 - For buffered channel, the sender blocks only until the value has been **copied** to the buffer. If the buffer is full, the sender needs to wait until some receiver has retrieved a value.
 
-### Demo Time :alarm_clock:
+**Demo Time** :alarm_clock:
 
 [channel-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-1): Channels both communicate and synchronize.
 
@@ -84,7 +84,7 @@ value = <-c
   - Make use of **multiple CPUs** for operating multiple processes.
   - Improved throughput, computational speed-up.
 
-### Demo Time :alarm_clock:
+**Demo Time** :alarm_clock:
 
 [channel-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-2): Function that returns a channel which lets us communicate with the service it provides.
 
