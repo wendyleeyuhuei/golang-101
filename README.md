@@ -4,7 +4,7 @@
 
 - A goroutine is an independently executing function, launched by a `go` statement.
 - It has its own call stack, which grows and shrinks as required.
-- It's not a thread (執行緒).
+- It's not a thread.
 
 **Demo Time** :alarm_clock:
 
@@ -30,7 +30,7 @@
 - **First-class values**, just like strings or integers. 
 - A channel can only transfer values of the **same type**.
 
-### Declaration & Initialization (宣告與初始化)
+### Declaration & Initialization
 
 ```
 // Declaring and initializing.
@@ -53,7 +53,7 @@ value = <-c
 
 ### Categories
 
-- Buffered Channel (緩衝信道)
+- Buffered Channel
   - Has a buffer size.
   - Acts as a [semaphore](https://www.keil.com/pack/doc/CMSIS/RTOS/html/group__CMSIS__RTOS__SemaphoreMgmt.html#details); manage and protect access to shared resources.
   - Limits the throughput; the capacity of the channel buffer limits the number of simultaneous calls to process.
@@ -88,7 +88,7 @@ value = <-c
 
 [channel-7](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-7): Timeout for whole conversation using `select`.
 
-### Concurrency v.s. Parallelism (並行與平行)
+### Concurrency v.s. Parallelism
 
 ![Concurrency v.s. Parallelism](./img/concurrency-vs-parallelism.png)
 
