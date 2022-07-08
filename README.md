@@ -88,6 +88,8 @@ value = <-c
 
 [channel-7](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-7): Timeout for whole conversation using `select`.
 
+[channel-8](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-7): Receive on quit channel.
+
 ### Concurrency v.s. Parallelism
 
 ![Concurrency v.s. Parallelism](./img/concurrency-vs-parallelism.png)
