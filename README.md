@@ -101,6 +101,16 @@ value = <-c
   - Make use of **multiple CPUs** for operating multiple processes.
   - Improved throughput, computational speed-up.
 
+**Demo Time** :alarm_clock:
+
+[search-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-1): Takes a query and returns a slice of Results.
+
+[search-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-2): Run the Web, Image, and Video searches concurrently, and wait for all results.
+
+[search-2-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-2-1): Implement with `select` statement.
+
+[search-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-3): Reduce tail latency using replicated search servers.
+
 ## References
 
 - [Effective Go - The Go Programming Language](https://go.dev/doc/effective_go#channels)
