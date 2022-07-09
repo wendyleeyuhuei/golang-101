@@ -10,7 +10,7 @@
 
 - [goroutine-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-1)
 
-> What's missing?
+> Issues:
 > 1. The main function couldn't see the output from the other goroutine.
 > 2. No communication at all.
 
@@ -24,6 +24,7 @@
 - **Bidirectional** as default. Goroutines can send/receive data through the same channel. 
   - Can be single-directional i.e. send-only or receive-only channel 
 - **First-class values**, just like strings or integers. 
+  - First-class citizen can be used as function parameter/return type
 - A channel can only transfer values of the **same type**.
 
 ### Declaration & Initialization
@@ -47,21 +48,19 @@ c <- 1
 value = <-c
 ```
 
-### Categories
+### Channel Blocking
 
-- Buffered Channel
-  - Has a buffer size.
-  - Acts as a [semaphore](https://www.keil.com/pack/doc/CMSIS/RTOS/html/group__CMSIS__RTOS__SemaphoreMgmt.html#details); manage and protect access to shared resources.
-  - Limits the throughput; the capacity of the channel buffer limits the number of simultaneous calls to process.
 - Unbuffered Channel
   - Buffer size is set to zero.
+  - The sender blocks until the receiver has **received** the value.
+  - The receiver blocks until there is data to receive.
   - Combines communication with synchronization.
-
-### Sender & Receiver
-
-- Receivers always block until there is data to receive.
-- For unbuffered channel, the sender blocks until the receiver has **received** the value.
-- For buffered channel, the sender blocks only until the value has been **copied** to the buffer. If the buffer is full, the sender needs to wait until some receiver has retrieved a value.
+- Buffered Channel
+  - Has a buffer size.
+  - The sender blocks only until the value has been **copied** to the buffer. If the buffer is full, the sender needs to wait until some receiver has retrieved a value.
+  - The receiver blocks until there is data to receive.
+  - Acts as a [semaphore](https://www.keil.com/pack/doc/CMSIS/RTOS/html/group__CMSIS__RTOS__SemaphoreMgmt.html#details); manage and protect access to shared resources.
+  - Limits the throughput; the capacity of the channel buffer limits the number of simultaneous calls to process.
 
 **Demo Time** :alarm_clock:
 
