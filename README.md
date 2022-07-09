@@ -65,20 +65,93 @@ value = <-c
 
 **Demo Time** :alarm_clock:
 
-- [channel-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-1): Channels both communicate and synchronize.
-- [channel-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-2): Function that returns a channel which lets us communicate with the service it provides.
+- [channel-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-1): Create a channel that connects the main and boring goroutines so they can communicate.
+  <pre>
+  func main() {
+    c := make(chan string)
+    <b>go boring("boring!", c)</b>
+    for i := 0; i < 5; i++ {
+        <b>fmt.Printf("You say: %q\n", <-c) // Receive expression is just a value.</b>
+    }
+    fmt.Println("You're boring; I'm leaving.")
+  }
+  </pre>
+  <pre>
+  func boring(msg string, c chan string) {
+    for i := 0; ; i++ {
+        <b>c <- fmt.Sprintf("%s %d", msg, i) // Expression to be sent can be any suitable value.</b>
+        time.Sleep(time.Duration(rand.Intn(1e3)) * time.Millisecond)
+    }
+  }
+  </pre>
+- [channel-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-2): Modify `boring` function to return a channel which lets us communicate with the service it provides.
+  <pre>
+  // in main function...
+  <b>joe := boring("Joe")
+  ann := boring("Ann")</b>
+  for i := 0; i < 5; i++ {
+    fmt.Println(<-joe)
+    fmt.Println(<-ann)
+  }
+  fmt.Println("You're boring; I'm leaving.")
+  </pre>
+  <pre>
+  func boring(msg string) <-chan string { // Returns receive-only channel of strings.
+    c := make(chan string)
+    go func() { // We launch the goroutine from inside the function.
+        for i := 0; ; i++ {
+            <b>c <- fmt.Sprintf("%s %d", msg, i)</b>
+            time.Sleep(time.Duration(rand.Intn(1e3)) * time.Millisecond)
+        }
+    }()
+    <b>return c // Return the channel to the caller.</b>
+  }
+  </pre>
 - [channel-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-3): Use fan-in function to let whosoever is ready talk.
+  <pre>
+  func fanIn(input1, input2 <-chan Message) <-chan Message {
+    c := make(chan Message)
+    go func() {
+      for {
+        c <- <-input1 // receive value from input1 and send value to c
+      }
+    }()
+    go func() {
+      for {
+        c <- <-input2
+      }
+    }()
+    return c
+  }
+  </pre>
   ![fan-in function](./img/fan-in-function.png)
-- [channel-4](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-4): Restoring sequence.
+- [channel-4](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-4): Restore sequence in the previous example.
 
 ### Select Control Structure
 
 **Demo Time** :alarm_clock:
 
 - [channel-5](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-5): Refactor fan-in function.
-- [channel-6](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-6): Timeout using `select`.
+  <pre>
+  func fanIn(input1, input2 <-chan Message) <-chan Message {
+    c := make(chan Message)
+    go func() {
+      for {
+        // Select the communication that is ready to proceed
+        <b>select {
+        case s := <-input1:
+          c <- s
+        case s := <-input2:
+          c <- s
+        }</b>
+      }
+    }()
+    return c
+  }
+  </pre>
+- [channel-6](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-6): Back to [channel-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-2) example, we can timeout using `select`.
 - [channel-7](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-7): Timeout for whole conversation using `select`.
-- [channel-8](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-7): Receive on quit channel.
+- [channel-8](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-7): Pass a quit channel to the service provider and confirm its termination by receiving value from the quit channel.
 
 ### Concurrency v.s. Parallelism
 
