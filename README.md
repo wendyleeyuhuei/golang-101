@@ -84,7 +84,7 @@ value = <-c
     }
   }
   </pre>
-- [channel-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-2): Modify `boring` function to return a channel which lets us communicate with the service it provides.
+- [channel-1-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-1-1): Modify `boring` function to return a channel which lets us communicate with the service it provides.
   <pre>
   // in main function...
   <b>joe := boring("Joe")
@@ -107,7 +107,7 @@ value = <-c
     <b>return c // Return the channel to the caller.</b>
   }
   </pre>
-- [channel-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-3): Use fan-in function to let whosoever is ready talk.
+- [channel-1-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-1-2): Use fan-in function to let whosoever is ready talk.
   <pre>
   func fanIn(input1, input2 <-chan Message) <-chan Message {
     c := make(chan Message)
@@ -125,13 +125,13 @@ value = <-c
   }
   </pre>
   ![fan-in function](./img/fan-in-function.png)
-- [channel-4](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-4): Restore sequence in the previous example.
+- [channel-1-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-1-3): Restore sequence in the previous example.
 
 ### Select Control Structure
 
 **Demo Time** :alarm_clock:
 
-- [channel-5](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-5): Refactor fan-in function.
+- [channel-1-4](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-1-4): Refactor fan-in function.
   <pre>
   func fanIn(input1, input2 <-chan Message) <-chan Message {
     c := make(chan Message)
@@ -149,9 +149,9 @@ value = <-c
     return c
   }
   </pre>
-- [channel-6](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-6): Back to [channel-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-2) example, we can timeout using `select`.
-- [channel-7](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-7): Timeout for whole conversation using `select`.
-- [channel-8](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-7): Pass a quit channel to the service provider and confirm its termination by receiving value from the quit channel.
+- [channel-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-2): Another example, we can timeout using `select`.
+- [channel-2-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-2-1): Timeout for whole conversation using `select`.
+- [channel-2-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-2-2): Pass a quit channel to the service provider and confirm its termination by receiving value from the quit channel.
 
 ### Concurrency v.s. Parallelism
 
