@@ -9,8 +9,6 @@
 **Demo Time** :alarm_clock:
 
 - [goroutine-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-1)
-- [goroutine-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-2)
-- [goroutine-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-3)
 
 > What's missing?
 > 1. The main function couldn't see the output from the other goroutine.
