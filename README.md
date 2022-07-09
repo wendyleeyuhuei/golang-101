@@ -50,17 +50,24 @@ value = <-c
 
 ### Channel Blocking
 
-- Unbuffered Channel
-  - Buffer size is set to zero.
-  - The sender blocks until the receiver has **received** the value.
-  - The receiver blocks until there is data to receive.
-  - Combines communication with synchronization.
-- Buffered Channel
-  - Has a buffer size.
-  - The sender blocks only until the value has been **copied** to the buffer. If the buffer is full, the sender needs to wait until some receiver has retrieved a value.
-  - The receiver blocks until there is data to receive.
-  - Acts as a [semaphore](https://www.keil.com/pack/doc/CMSIS/RTOS/html/group__CMSIS__RTOS__SemaphoreMgmt.html#details); manage and protect access to shared resources.
-  - Limits the throughput; the capacity of the channel buffer limits the number of simultaneous calls to process.
+**Unbuffered Channel**
+- Buffer size is set to zero (only one piece of data fits through the channel at a time).
+  ![unbuffered-chan](./img/unbuffered-chan.png)
+- The sender blocks until the receiver has **received** the value.
+  ![blocking-send](./img/blocking-send.png)
+- The receiver blocks until there is data to receive.
+  ![blocking-receive](./img/blocking-receive.png)
+- Combines communication with synchronization.
+
+**Buffered Channel** 
+- Has a buffer size (can send multiple pieces of data to the channel before needing another goroutine to read from it).
+  ![buffered-chan](./img/buffered-chan.png)
+- The sender blocks only until the value has been **copied** to the buffer. If the buffer is full, the sender needs to wait until some receiver has retrieved a value.
+  ![buffer-chan-send](./img/buffer-chan-send.png)
+- The receiver blocks until there is data to receive.
+- Acts as a [semaphore](https://www.keil.com/pack/doc/CMSIS/RTOS/html/group__CMSIS__RTOS__SemaphoreMgmt.html#details) to limit the throughput
+  - Semaphore manages and protects access to shared resources.
+  - The capacity of the channel buffer limits the number of simultaneous calls to process.
 
 **Demo Time** :alarm_clock:
 
@@ -179,5 +186,6 @@ value = <-c
 - [Concurrency is not parallelism - The Go Programming Language](https://go.dev/blog/waza-talk)
 - [Channel in Golang - GeeksforGeeks](https://www.geeksforgeeks.org/channel-in-golang/)
 - [Channels in Go](https://go101.org/article/channel.html)
+- [Learning Go's Concurrency Through Illustrations | by Trevor Forrey | Medium](https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3)
 - [Difference Between Concurrency and Parallelism (with Comparison Chart)](https://techdifferences.com/difference-between-concurrency-and-parallelism.html)
 - [What is a First-class Object?](https://www.computerhope.com/jargon/f/firstclass-object.htm)
