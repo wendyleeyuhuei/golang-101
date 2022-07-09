@@ -7,12 +7,9 @@ import (
 )
 
 func main() {
-	// Create multiple instances of the boring service
-	joe := boring("Joe")
-	ann := boring("Ann")
-	for i := 0; i < 5; i++ {
-		fmt.Println(<-joe)
-		fmt.Println(<-ann)
+	c := fanIn(boring("Joe"), boring("Ann"))
+	for i := 0; i < 20; i++ {
+		fmt.Println(<-c)
 	}
 	fmt.Println("You're both boring; I'm leaving.")
 }
@@ -26,4 +23,21 @@ func boring(msg string) <-chan string { // Returns receive-only channel of strin
 		}
 	}()
 	return c // Return the channel to the caller.
+}
+
+// Combines the received value from two channels
+// and send them to a new channel
+func fanIn(input1, input2 <-chan string) <-chan string {
+	c := make(chan string)
+	go func() {
+		for {
+			c <- <-input1 // receive value from input1 and send value to c
+		}
+	}()
+	go func() {
+		for {
+			c <- <-input2
+		}
+	}()
+	return c
 }
