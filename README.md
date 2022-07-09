@@ -8,15 +8,13 @@
 
 **Demo Time** :alarm_clock:
 
-[goroutine-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-1)
+- [goroutine-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-1)
+- [goroutine-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-2)
+- [goroutine-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-3)
 
-[goroutine-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-2)
-
-[goroutine-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/goroutine-3)
-
-- What's missing?
-  - The main function couldn't see the output from the other goroutine.
-  - No communication at all.
+> What's missing?
+> 1. The main function couldn't see the output from the other goroutine.
+> 2. No communication at all.
 
 ## Go Channel
 
@@ -69,26 +67,20 @@ value = <-c
 
 **Demo Time** :alarm_clock:
 
-[channel-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-1): Channels both communicate and synchronize.
-
-[channel-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-2): Function that returns a channel which lets us communicate with the service it provides.
-
-[channel-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-3): Use fan-in function to let whosoever is ready talk.
-![fan-in function](./img/fan-in-function.png)
-
-[channel-4](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-4): Restoring sequence.
+- [channel-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-1): Channels both communicate and synchronize.
+- [channel-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-2): Function that returns a channel which lets us communicate with the service it provides.
+- [channel-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-3): Use fan-in function to let whosoever is ready talk.
+  ![fan-in function](./img/fan-in-function.png)
+- [channel-4](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-4): Restoring sequence.
 
 ### Select Control Structure
 
 **Demo Time** :alarm_clock:
 
-[channel-5](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-5): Refactor fan-in function.
-
-[channel-6](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-6): Timeout using `select`.
-
-[channel-7](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-7): Timeout for whole conversation using `select`.
-
-[channel-8](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-7): Receive on quit channel.
+- [channel-5](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-5): Refactor fan-in function.
+- [channel-6](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-6): Timeout using `select`.
+- [channel-7](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-7): Timeout for whole conversation using `select`.
+- [channel-8](https://github.com/wendyleeyuhuei/golang-101/tree/main/channel-7): Receive on quit channel.
 
 ### Concurrency v.s. Parallelism
 
@@ -105,13 +97,11 @@ value = <-c
 
 **Demo Time** :alarm_clock:
 
-[search-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-1): Takes a query and returns a slice of Results.
-
-[search-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-2): Run the Web, Image, and Video searches concurrently, and wait for all results.
-
-[search-2-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-2-1): Implement with `select` statement.
-
-[search-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-3): Reduce tail latency using replicated search servers.
+- [search-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-1): Takes a query and returns a slice of Results.
+- [search-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-2): Run the Web, Image, and Video searches concurrently, and wait for all results.
+- [search-2-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-2-1): Implement with `select` statement.
+- [search-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-3): Reduce tail latency using replicated search servers.
+  - Tail Latencies are things like: "my service mostly responds in around 10ms, but sometimes takes around 100ms"
 
 ## References
 
