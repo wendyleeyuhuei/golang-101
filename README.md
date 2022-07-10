@@ -36,16 +36,22 @@ c = make(chan int)
 // or
 c := make(chan int)
 ```
-
 ```
 // Sending on a channel.
 c <- 1
 ```
-
 ```
 // Receiving from a channel.
 // The "arrow" indicates the direction of data flow.
 value = <-c
+```
+```
+// Send-only channel.
+c := make(chan<- int) // arrow indicates the data flow
+```
+```
+// Receive-only channel.
+c := make(<-chan int) // arrow indicates the data flow
 ```
 
 ### Channel Blocking
