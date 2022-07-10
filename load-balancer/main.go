@@ -2,6 +2,7 @@ package main
 
 import (
 	"container/heap"
+	"fmt"
 	"math/rand"
 	"time"
 )
@@ -57,11 +58,12 @@ type Balancer struct {
 }
 
 // requester continuously sends request to work channel and further process with the request's result
-func requester(work chan<- Request) {
+func requester(work chan Request) {
 	c := make(chan int)
 	for {
 		// Kill some time (fake load).
-		time.Sleep(time.Duration(rand.Intn(1e3)) * time.Millisecond)
+		time.Sleep(time.Duration(rand.Int63n(int64(nWorker * 2 * time.Second))))
+		fmt.Println("[REQUESTER] Sends request to work channel...")
 		work <- Request{operation, c} // send request
 		result := <-c                 // wait for answer
 		furtherProcess(result)
@@ -70,6 +72,7 @@ func requester(work chan<- Request) {
 
 // work continuously deals with the request and inform done channel when it's finished
 func (w *Worker) work(done chan *Worker) {
+	fmt.Printf("[WORK] Worker%v starts...\n", w.index)
 	for {
 		req := <-w.requests // get Request from balancer
 		req.c <- req.fn()   // call fn and send result
@@ -93,6 +96,7 @@ func (b *Balancer) balance(work chan Request) {
 func (b *Balancer) dispatch(req Request) {
 	// Grab the least loaded worker...
 	w := heap.Pop(&b.pool).(*Worker)
+	fmt.Printf("[DISPATCH] Balancer dispatches request received to worker%v with %v number of pending task...\n", w.index, w.pending)
 	// ...send it the task.
 	w.requests <- req
 	// Increment the queue
@@ -103,6 +107,7 @@ func (b *Balancer) dispatch(req Request) {
 
 // completed updates heap when job is finished
 func (b *Balancer) completed(w *Worker) {
+	fmt.Printf("[COMPLETED] Balancer updates the status of the worker%v upon task completion...\n", w.index)
 	// One fewer in the queue.
 	w.pending--
 	// Remove it from heap.
@@ -125,6 +130,7 @@ func furtherProcess(result int) {
 }
 
 func newBalancer() *Balancer {
+	fmt.Printf("[NEWBALANCER] Initialize balancer with %v workers...\n", nWorker)
 	// Create a done channel
 	done := make(chan *Worker, nWorker)
 	// Create a balancer
@@ -132,6 +138,7 @@ func newBalancer() *Balancer {
 	for i := 0; i < nWorker; i++ {
 		// Create worker with requests buffered channel
 		w := &Worker{requests: make(chan Request, nRequester), index: i}
+		fmt.Printf("[NEWBALANCER] Push worker%v to heap...\n", w.index)
 		// Push the worker to heap
 		heap.Push(&b.pool, w)
 		// Launch work in goroutine
@@ -141,7 +148,9 @@ func newBalancer() *Balancer {
 }
 
 func main() {
+	fmt.Println("[MAIN] Initialize a work channel...")
 	work := make(chan Request)
+	fmt.Printf("[MAIN] Generate %v number of requester...\n", nRequester)
 	for i := 0; i < nRequester; i++ {
 		go requester(work)
 	}
