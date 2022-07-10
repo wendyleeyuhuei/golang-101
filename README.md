@@ -174,11 +174,15 @@ value = <-c
 
 **Demo Time** :alarm_clock:
 
+**Google Search**
 - [search-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-1): Takes a query and returns a slice of Results.
 - [search-2](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-2): Run the Web, Image, and Video searches concurrently, and wait for all results.
 - [search-2-1](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-2-1): Implement with `select` statement.
 - [search-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-3): Reduce tail latency using replicated search servers.
   - Tail Latencies are things like: "my service mostly responds in around 10ms, but sometimes takes around 100ms"
+
+**Load Balancer** ([slide](https://talks.golang.org/2012/waza.slide#45))
+- [load-balancer](https://github.com/wendyleeyuhuei/golang-101/tree/main/load-balancer)
 
 ## References
 
@@ -189,3 +193,4 @@ value = <-c
 - [Learning Go's Concurrency Through Illustrations | by Trevor Forrey | Medium](https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3)
 - [Difference Between Concurrency and Parallelism (with Comparison Chart)](https://techdifferences.com/difference-between-concurrency-and-parallelism.html)
 - [What is a First-class Object?](https://www.computerhope.com/jargon/f/firstclass-object.htm)
+- [Load balancer github code](https://gist.github.com/chenlujjj/f2cc6b75e5276e41bf82b5d561fcf28f)
