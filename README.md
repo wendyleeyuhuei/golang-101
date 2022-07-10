@@ -161,16 +161,11 @@ value = <-c
 
 ### Concurrency v.s. Parallelism
 
-![Concurrency v.s. Parallelism](./img/concurrency-vs-parallelism.png)
+([slide p.12](https://talks.golang.org/2012/waza.slide#12) ~ [slide p.23](https://talks.golang.org/2012/waza.slide#23))
 
-- Concurrency
-  - Composition of independently executing processes.
-  - Make use of **context switching**.
-  - Increased amount of work accomplished at a time.
-- Parallelism
-  - Simultaneous execution of (possibly related) computations.
-  - Make use of **multiple CPUs** for operating multiple processes.
-  - Improved throughput, computational speed-up.
+- Concurrency: programming as the composition of independently executing processes (process in general).
+- Parallelism: programming as the simultaneous execution of (possibly related) computations.
+- Concurrency is about structure, parallelism is about execution.
 
 **Demo Time** :alarm_clock:
 
@@ -181,7 +176,7 @@ value = <-c
 - [search-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-3): Reduce tail latency using replicated search servers.
   - Tail Latencies are things like: "my service mostly responds in around 10ms, but sometimes takes around 100ms"
 
-**Load Balancer** ([slide](https://talks.golang.org/2012/waza.slide#45))
+**Load Balancer** ([slide p.45](https://talks.golang.org/2012/waza.slide#45))
 - [load-balancer](https://github.com/wendyleeyuhuei/golang-101/tree/main/load-balancer)
 
 ## References
