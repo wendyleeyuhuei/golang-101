@@ -182,7 +182,7 @@ c := make(<-chan int) // arrow indicates the data flow
 - [search-3](https://github.com/wendyleeyuhuei/golang-101/tree/main/search-3): Reduce tail latency using replicated search servers.
   - Tail Latencies are things like: "my service mostly responds in around 10ms, but sometimes takes around 100ms"
 
-**Load Balancer** ([slide p.45](https://talks.golang.org/2012/waza.slide#45))
+**Load Balancer** ([slide p.45](https://talks.golang.org/2012/waza.slide#45) ~ [slide p.54](https://talks.golang.org/2012/waza.slide#54))
 - [load-balancer](https://github.com/wendyleeyuhuei/golang-101/tree/main/load-balancer)
 
 ## References
