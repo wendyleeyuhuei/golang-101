@@ -3,8 +3,6 @@
 ## [Recap] Goroutines
 
 - A goroutine is an independently executing function, launched by a `go` statement.
-- It has its own call stack, which grows and shrinks as required.
-- It's not a thread.
 
 **Demo Time** :alarm_clock:
 
