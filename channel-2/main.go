@@ -12,7 +12,7 @@ func main() {
 		select {
 		case s := <-c:
 			fmt.Println(s)
-		// time.After returns a channel that blocks for the specified duration
+		// time.After returns a receive-only channel that blocks for the specified duration
 		case <-time.After(1 * time.Second):
 			fmt.Println("You're too slow")
 			return
