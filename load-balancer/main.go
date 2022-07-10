@@ -35,8 +35,8 @@ func (p Pool) Less(i, j int) bool {
 	return p[i].pending < p[j].pending
 }
 
-func (p *Pool) Swap(i, j int) {
-	(*p)[i], (*p)[j] = (*p)[j], (*p)[i]
+func (p Pool) Swap(i, j int) {
+	p[i], p[j] = p[j], p[i]
 }
 
 func (p *Pool) Push(x any) {
