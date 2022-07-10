@@ -161,7 +161,7 @@ value = <-c
 
 ### Concurrency v.s. Parallelism
 
-([slide p.12](https://talks.golang.org/2012/waza.slide#12) ~ [slide p.23](https://talks.golang.org/2012/waza.slide#23))
+([slide p.12](https://talks.golang.org/2012/waza.slide#12) ~ [slide p.28](https://talks.golang.org/2012/waza.slide#28))
 
 - Concurrency: programming as the composition of independently executing processes (process in general).
 - Parallelism: programming as the simultaneous execution of (possibly related) computations.
